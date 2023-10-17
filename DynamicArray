@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int i;
+    int arraySize = 10;
+    int *dynamicArray = (int *)malloc(arraySize * sizeof(int));
+
+    if (dynamicArray == NULL) {
+        printf("Memory allocation failed. Exiting the program.\n");
+        return 1;
+    }
+
+    // Populate the array with values
+    for (i = 0; i < arraySize; i++) {
+        dynamicArray[i] = i;
+    }
+
+    // Print the elements of the array
+    for (i = 0; i < arraySize; i++) {
+        printf("dynamicArray[%d] = %d\n", i, dynamicArray[i]);
+    }
+
+    // Free dynamically allocated memory
+    free(dynamicArray);
+
+    return 0;
+}
